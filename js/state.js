@@ -1,19 +1,19 @@
-//stores and manage data inside app-level
+// state.js
+// Stores and manages app-level state like todos, current filter, etc.
 
-export let todos =[]  // Array of todo items
-export let currentFilter = 'all';
-export let editTodoId= null;
+export let todos = []; // Array of todo items
+export let currentFilter = "all"; // active | completed | all
+export let editingTodoId = null; // Stores the ID of the todo being edited
 
-
-//function to update the state 
+// Functions to update state (to keep things consistent across modules)
 export function setTodos(newTodos) {
-    todos = newTodos;
+  todos = newTodos;
 }
 
 export function setCurrentFilter(filter) {
-    currentFilter = filter;
+  currentFilter = filter;
 }
 
 export function setEditingTodoId(id) {
-    editTodoId=id;
+  editingTodoId = id;
 }

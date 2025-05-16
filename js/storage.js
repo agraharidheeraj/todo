@@ -1,11 +1,15 @@
-import { setTodos } from "./state"
+// storage.js
+// Responsible for loading and saving todos to localStorage
 
+import { setTodos } from "./state.js";
 
-export function loadTodos () {
-    const saved = localStorage.getItem("todos")
-    setTodos(saved ? JSON.parse(saved) : [] )
+// Load todos from localStorage
+export function loadTodos() {
+  const saved = localStorage.getItem("todos");
+  setTodos(saved ? JSON.parse(saved) : []);
 }
 
+// Save todos to localStorage
 export function saveTodos(todos) {
-    localStorage.setItem("todos", JSON.stringify(todos))
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
